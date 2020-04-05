@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock title%}
+
+{% block body %}
+
+    <div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+
+				<h3 align="center" class="panel-title">Form</h3></div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-4 col-xs-12"></div>
+					<div class="col-md-4 col-xs-12" >
+						<form role="form" action="{% url 'form' %}" method="post">
+                            {% csrf_token %}
+							<div class="form-group">
+								<label>Name</label>
+								<input class="form-control" name="name" required type="text">
+							</div>
+							<div class="form-group">
+								<label>Email</label>
+								<input class="form-control" name="email" required type="Email">
+							</div>
+							<div class="form-group">
+								<label>Mobile no</label>
+								<input class="form-control" name="number" pattern="[+/0-9]{13}" required type="text">
+							</div>
+                            <div class="form-group">
+                                <label for="FormControlSelect1">How did you hear about us</label>
+                                <select class="form-control" id="FormControlSelect1" name="hear">
+                                  <option>Friends</option>
+                                  <option>News</option>
+                                  <option>Social networking site</option>
+                                  <option>Relatives</option>
+                                  <option>other</option>
+                                </select>
+                            </div>
+
+							<button class="btn btn-success" type="submit">Submit</button>
+						</form>
+			         </div>
+			         <div class="col-md-4 col-xs-12"></div>
+			    </div>
+
+
+
+	</div>
+
+ {% endblock body %}
